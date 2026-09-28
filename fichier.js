@@ -1,32 +1,28 @@
-const keys = document.querySelectorAll(".key");
-const  audios = document.querySelectorAll("audio"); 
-
-function playSound() {
-    const appui = this.dataset.key;
-    this.classList.add('playing')
-    setTimeout(() => this.classList.remove('playing'), 150)
-   
-    //Selection et début de l'audio
-    audios.forEach((audio) => {
-        if(audio.dataset.key == appui){
-            audio.currentTime = 0;
-            audio.play();
-           
-            
-        }
-    })
-    return;
+function playSound(keyCode) {
+  let audio = document.querySelector('audio[data-key="' + keyCode + '"]')
+  audio.play()
+  let key = document.querySelector('div[data-key="' + keyCode + '"]')
+  key.classList.add("playing")
 }
 
-keys.forEach((key) => {
-    key.addEventListener('click', playSound);
+window.addEventListener("keydown", (e) => {
+  playSound(e.keyCode)
 })
 
-document.addEventListener('keypress', (k) => {
-    keys.forEach((key) => {
-        const kbd = key.querySelector('kbd');
-        if(k.key.toUpperCase() === kbd.textContent.toUpperCase()){
-            playSound.call(key);
-        }
-    })
-})
+let keys = document.querySelectorAll(".key")
+
+for (const key of keys) {
+  key.addEventListener("transitionend", (e) => {
+    key.classList.remove("playing")
+  })
+}
+
+function beatbox(){
+    function simulateKey(key){
+        key.dispatchEvent(new KeyboardEvent('keydown', (e) =>{
+            playSound(e.keyCode)
+        }))
+    }
+}
+
+document.getElementById('sim-10').addEventListener('click',beatbox())
