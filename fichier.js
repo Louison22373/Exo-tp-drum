@@ -39,6 +39,7 @@ function beatbox(){
         await playBeat(87,400)
         await playBeat(65,400)
         await playBeat(90,500)
+        await playBeat(81,500)
 
     }
         
