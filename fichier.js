@@ -18,11 +18,21 @@ for (const key of keys) {
 }
 
 function beatbox(){
-    function simulateKey(key){
-        key.dispatchEvent(new KeyboardEvent('keydown', (e) =>{
-            playSound(e.keyCode)
-        }))
+    const simulateKey = (keyCode) => {
+        const event = new KeyboardEvent('keydown', {
+            keyCode,
+            bubbles:true,
+        });
+        document.dispatchEvent(event);
+    }
+
+    const playBeat = (keyCode, delay) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                simulateKey(keyCode);
+                resolve();
+            }, delay)
+        })
     }
 }
-
-document.getElementById('sim-10').addEventListener('click',beatbox())
+    
