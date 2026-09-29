@@ -21,7 +21,7 @@ function beatbox(){
     const simulateKey = (keyCode) => {
         const event = new KeyboardEvent('keydown', {
             keyCode,
-            bubbles:true,
+            bubbles: true,
         });
         document.dispatchEvent(event);
     }
@@ -42,7 +42,8 @@ function beatbox(){
         await playBeat(81,500)
 
     }
-        
+    
+    return beat();
 }
 
-    
+document.getElementById('beatBtn').addEventListener('click', beatbox)
