@@ -88,10 +88,10 @@ recordBtn.addEventListener('click', () => {
 
 playRecord.addEventListener('click', () => {
 
-    async function box() {
+    async function box(){
         for (const val of tableau) {
-            await playBeat(val.code, val.time)
+            await playBeat(val.code, val.time);
         }
     }
-
-})
+    return box();
+});
