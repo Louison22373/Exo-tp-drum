@@ -54,12 +54,15 @@
             <kbd>C</kbd>
             <span class="sound">tink</span>
         </div>
-        
+
         <!-- Générer les 8 boxes restantes correspondant aux fichiers audio à jouer -->
     </div>
     <div class="pad">
-           <button class="btn" id="beatBtn"><p>Simulate 10 press</p></button>
-        </div>
+        <button class="btn" id="beatBtn">Simulate 10 press</button>
+        <button class="btn" id="recordBtn">Start recording</button>
+        <button class="btn" id="playRecord">Play record</button>
+    </div>
+
     <!-- Audio source -->
     <audio data-key="65" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/clap.wav"></audio>
     <audio data-key="90" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/hihat.wav"></audio>
@@ -72,4 +75,5 @@
     <audio data-key="67" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1159990/tink.wav"></audio>
 </body>
 <script src="fichier.js"></script>
+
 </html>
