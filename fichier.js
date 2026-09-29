@@ -46,8 +46,8 @@ function beatbox(){
         await playBeat(88,700)
         await playBeat(67,500)
         await playBeat(81,600)
-        
-
+        await playBeat(90,700)
+        await playBeat(87,500)
     }
     
     return beat();
