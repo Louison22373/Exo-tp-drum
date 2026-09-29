@@ -40,12 +40,12 @@ function beatbox(){
         await playBeat(65,400)
         await playBeat(90,500)
         await playBeat(81,500)
-        await playBeat(83,500)
-        await playBeat(68,500)
+        await playBeat(83,600)
+        await playBeat(68,400)
         await playBeat(87,500)
-        await playBeat(88,500)
+        await playBeat(88,700)
         await playBeat(67,500)
-        await playBeat(81,500)
+        await playBeat(81,600)
         
 
     }
